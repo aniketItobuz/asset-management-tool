@@ -47,4 +47,30 @@ router.delete("/:id", async (req, res) => {
   });
 
 
+  router.put("/:id", async (req, res) => {
+    try {
+      const emp = await employee.findByIdAndUpdate(
+        req.params.id,
+        {
+          name: req.body.name,
+          email: req.body.email,
+          phone_no: req.body.phone_no,
+          team: req.body.team,
+          status: req.body.status,
+        },
+        { new: true } // Return the updated document
+      );
+  
+      if (!emp) {
+        return res.status(404).send("Employee not found");
+      }
+  
+      res.json(emp);
+    } catch (err) {
+      res.send("Error" + err);
+    }
+  });
+  
+
+
 module.exports = router;
