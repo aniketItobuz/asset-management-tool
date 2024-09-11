@@ -13,6 +13,9 @@ app.use(cors());
 const employeeRouter = require('./routes/employee/employees')
 app.use('/employees', employeeRouter)
 
+const hardwareRouter = require('./routes/hardware/hardwares')
+app.use('/hardwares', hardwareRouter)
+
 app.listen(3000, function(){
     console.log('Server started...');
 } )
