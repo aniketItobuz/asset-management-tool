@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { z } = require("zod");
-const employee = require("../models/employee");
+const employee = require("../../models/employee/employee");
 
 // Define the Zod schema for employee validation
 const employeeSchema = z.object({

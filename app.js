@@ -10,7 +10,7 @@ app.use(express.json())
 app.use(cors());
 
 
-const employeeRouter = require('./routes/employees')
+const employeeRouter = require('./routes/employee/employees')
 app.use('/employees', employeeRouter)
 
 app.listen(3000, function(){
