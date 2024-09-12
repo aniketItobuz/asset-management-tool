@@ -18,7 +18,8 @@ const hardwareSchema = new mongoose.Schema({
         require: true
     },
     assignee: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Employee',
         require: true
     },
 })

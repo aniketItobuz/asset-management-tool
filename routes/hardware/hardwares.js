@@ -5,7 +5,8 @@ const hardware = require("../../models/hardware/hardware");
 
 router.get("/", async (req, res) => {
   try {
-    const hard = await hardware.find();
+    const hard = await hardware.find().populate('assignee', 'name -_id');
+    console.log(hard)
     res.json(hard);
   } catch (err) {
     res.send("Error" + err);
